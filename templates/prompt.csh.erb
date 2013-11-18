@@ -1,0 +1,9 @@
+
+if ($?tcsh) then
+  set promptchars='$#'
+<% if @tcsh_content == nil -%>
+  set prompt='[<%= @tcsh_user %>@<%= @tcsh_hostname %> <%= @tcsh_cwd %>]%# '
+<% else -%>
+  set prompt='<%= @tcsh_content %>'
+<% end -%>
+endif
